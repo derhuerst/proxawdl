@@ -1,0 +1,14 @@
+language: swift
+
+# xcode_project: proxawdl.xcodeproj
+# xcode_destination: platform=macOS
+# xcode_scheme: proxawdl
+# xcode_sdk: macosx
+
+osx_image: xcode11.2
+os: osx
+env:
+  - TOOLCHAINS=swift
+script:
+  - xcrun --sdk macosx --toolchain swift swift build --help
+  - xcrun --sdk macosx --toolchain swift swift build -Xswiftc -swift-version -Xswiftc 4 -Xswiftc -import-objc-header -Xswiftc Sources/proxawdl/proxawdl-Bridging-Header.h -Xswiftc -I -Xswiftc Sources/proxawdl
