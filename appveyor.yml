@@ -1,0 +1,5 @@
+image: macos
+build_script:
+  - xcodebuild
+test_script:
+  - ./build/Release/proxawdl
